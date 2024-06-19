@@ -36,7 +36,7 @@ if(!is_null($usu)){
             if($busca->num_rows == 0){
                 echo "<br> Usuário não existe";
             }else{
-                echo "<br> boa";
+                echo "<br> Login efetuado!";
                 
                 $obj = $busca->fetch_object();
                 echo "<br>" . $obj->cod;
@@ -46,11 +46,11 @@ if(!is_null($usu)){
 
                 if($sen === $obj->senha){
                 //if(password_verify($sen, $obj->senha)){
-                    echo "<br> sucesso!";
+                    echo "<br>";
                     $_SESSION["usuario"] = $usu;
                     $_SESSION["cod_usuario"] = $obj->cod;
                 }else{
-                    echo "<br> sem sucesso :/";
+                    echo "<br> senha incorreta!";
                 }
 
             }
