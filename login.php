@@ -49,7 +49,6 @@ if(!is_null($usu)){
                     echo "<br> sucesso!";
                     $_SESSION["usuario"] = $usu;
                     $_SESSION["cod_usuario"] = $obj->cod;
-                    header("Location: lista.php");
                 }else{
                     echo "<br> sem sucesso :/";
                 }
