@@ -8,56 +8,47 @@
 </head>
 <body>
 
-    
 <?php
-
 session_start();
 
 $usu = $_SESSION["usuario"] ?? null;
 
-if(!is_null($usu)){
-    // estou logado
-}else{
-    
-        require_once "banco.php";
-    
-        $usu = $_POST['usuario'] ?? null;
-        $sen = $_POST['senha'] ?? null;
+if (!is_null($usu)) {
+    // Usuário já está logado
+    header("Location: filmes.php"); // Redirecionar para a página de filmes
+    exit();
+} else {
+    require_once "banco.php";
 
-        if(is_null($usu) || is_null($sen)){
-            
-        }else{
+    $email = $_POST['email'] ?? null;
+    $senha = $_POST['password'] ?? null;
 
-            echo "~ [Usuario: $usu - Senha: $sen] ~ <br>";
+    if (!is_null($email) && !is_null($senha)) {
+        $stmt = $banco->prepare("SELECT * FROM usuarios WHERE email=?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
 
-            $busca = $banco->query("SELECT * FROM usuarios WHERE usuario='$usu'");
-
-            if($busca->num_rows == 0){
-                echo "<br> Usuário não existe";
-            }else{
-                echo "<br> Login efetuado!";
-                
-                $obj = $busca->fetch_object();
-                echo "<br>" . $obj->cod;
-                echo "<br>" . $obj->usuario;
-                echo "<br>" . $obj->nome;
-                echo "<br>" . $obj->senha;
-
-                if($sen === $obj->senha){
-                //if(password_verify($sen, $obj->senha)){
-                    echo "<br>";
-                    $_SESSION["usuario"] = $usu;
-                    $_SESSION["cod_usuario"] = $obj->cod;
-                }else{
-                    echo "<br> Senha incorreta!";
-                }
-
+        if ($resultado->num_rows == 0) {
+            echo "<p>Usuário não existe</p>";
+        } else {
+            $obj = $resultado->fetch_object();
+            if (password_verify($senha, $obj->senha)) {
+                $_SESSION["usuario"] = $obj->email;
+                $_SESSION["cod_usuario"] = $obj->cod;
+                header("Location: filmes.php"); // Redirecionar para a página de filmes
+                exit();
+            } else {
+                echo "<p>Senha incorreta!</p>";
             }
-
-            
         }
+        $stmt->close();
     }
+}
+
+$banco->close();
 ?>
+
 
 <div>
     <h1>Login</h1>
