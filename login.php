@@ -61,7 +61,7 @@ $banco->close();
 
       <button type="submit">Entrar</button>
     </form>
-    <p>Não tem uma conta? <a href="Cadastro.html">Faça seu cadastro</a></p>
+    <p>Não tem uma conta? <a href="cadastro.php">Faça seu cadastro</a></p>
 </div>
 
 </body>
