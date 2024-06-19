@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -50,7 +49,7 @@ if(!is_null($usu)){
                     $_SESSION["usuario"] = $usu;
                     $_SESSION["cod_usuario"] = $obj->cod;
                 }else{
-                    echo "<br> senha incorreta!";
+                    echo "<br> Senha incorreta!";
                 }
 
             }
