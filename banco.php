@@ -46,7 +46,8 @@ while ($obj = $buscaAll->fetch_object()) {
     echo "<form class='formFilme' method='post'>";
     echo "<br><li>Titulo: " . $obj->titulo . " <br> Autor: " . $obj->autor . " <br> Sinopse: " . $obj->sinopse . " <br> Nota: " . $obj->nota . "</li>";
     echo  "<input type='hidden' name='id' value='$obj->ID'>
-        <input type='submit' value='Remover' name='remove'>
+        <input class='btn btn-primary' type='submit' value='Remover' name='remove'>
+
     </form>";
 }
 echo "</ul>";
