@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    
+
     <!-- FONTE MONTSERRAT' -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,25 +56,17 @@
 
         <h1>Cadastre-se</h1>
         <div class="mb-3">
-            <div class="form-floating">
-                <input class="form-control" type="text" placeholder="usuario" name="usuario"> 
-                <label for="usuario">Usuário</label>
+                <input class="form-control" type="text" placeholder="usuario" name="usuario" placeholder="Usuário"> 
+            
+                <input class="form-control" type="text" placeholder="senha" name="senha" placeholder="Senha">
+
+                <input class="form-control" type="text" placeholder="nome" name="nome" placeholder="Nome">
+            
+                <input class="form-control" type="text" placeholder="email" name="email" aria-placeholder="Email" >  
+                
+                <input class="btn btn-primary" type="submit" id="enviar" name="enviar" value="Enviar">  
+                <a class="btn btn-warning" href="login.php">Entrar</a>
             </div>
-            <div class="form-floating">
-                <input class="form-control" type="text" placeholder="senha" name="senha">
-                <label for="senha">Senha</label>
-            </div>
-            <div class="form-floating">
-                <input class="form-control" type="text" placeholder="nome" name="nome">
-                <label for="nome">Nome</label>
-    
-            </div>
-            <div class="form-floating">
-                <input class="form-control" type="text" placeholder="email" name="email">  
-                <label for="email">Email</label>
-            </div>
-            <input class="btn btn-primary" type="submit" id="enviar" name="enviar" value="Enviar">  
-            <a class="btn btn-warning" href="login.php">Entrar</a>
     
         </div>
     </div>
