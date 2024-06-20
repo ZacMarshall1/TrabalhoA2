@@ -58,7 +58,7 @@
         <div class="mb-3">
                 <input class="form-control" type="text" placeholder="usuario" name="usuario" placeholder="Usuário"> 
             
-                <input class="form-control" type="text" placeholder="senha" name="senha" placeholder="Senha">
+                <input class="form-control" type="password" placeholder="senha" name="senha" placeholder="Senha">
 
                 <input class="form-control" type="text" placeholder="nome" name="nome" placeholder="Nome">
             
