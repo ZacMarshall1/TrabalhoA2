@@ -61,7 +61,7 @@
             
                 <input class="form-control" type="text" placeholder="usuario" name="usuario"> 
             
-                <input class="form-control" type="text" placeholder="senha" name="senha">
+                <input class="form-control" type="password" placeholder="senha" name="senha">
                 
             <input class="btn btn-primary" type="submit" value="Entrar">
         </form>
