@@ -37,6 +37,10 @@
         margin-top: 10px;
     }
 
+    .btn {
+        margin-top: 10px;
+    }
+
     button {
         margin-top: 20px;
         margin-bottom: 50px;
@@ -59,9 +63,9 @@
         <h1>Login</h1>
         <form class="login-form" method="post" action="">
             
-                <input class="form-control" type="text" placeholder="usuario" name="usuario"> 
+                <input class="form-control" type="text" placeholder="Usuário" name="usuario"> 
             
-                <input class="form-control" type="password" placeholder="senha" name="senha">
+                <input class="form-control" type="password" placeholder="Senha" name="senha">
                 
             <input class="btn btn-primary" type="submit" value="Entrar">
         </form>

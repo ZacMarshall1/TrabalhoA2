@@ -56,13 +56,13 @@
 
         <h1>Cadastre-se</h1>
         <div class="mb-3">
-                <input class="form-control" type="text" placeholder="usuario" name="usuario" placeholder="Usuário"> 
+                <input class="form-control" type="text" name="usuario" placeholder="Usuário"> 
             
-                <input class="form-control" type="password" placeholder="senha" name="senha" placeholder="Senha">
+                <input class="form-control" type="password" name="senha" placeholder="Senha">
 
-                <input class="form-control" type="text" placeholder="nome" name="nome" placeholder="Nome">
+                <input class="form-control" type="text" name="nome" placeholder="Nome">
             
-                <input class="form-control" type="text" placeholder="email" name="email" aria-placeholder="Email" >  
+                <input class="form-control" type="text" name="email" placeholder="Email" >  
                 
                 <input class="btn btn-primary" type="submit" id="enviar" name="enviar" value="Enviar">  
                 <a class="btn btn-warning" href="login.php">Entrar</a>
