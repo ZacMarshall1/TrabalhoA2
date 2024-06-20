@@ -49,6 +49,7 @@
             align-items: center;
             border-radius: 10px;
             overflow: hidden;
+            font-size: 12px;
         }
 
         .titulo {
@@ -83,7 +84,23 @@
 </head>
 
 <body>
-    <h2>FILME PHP</h2>
+    <h2>FILME PHP 
+        <br>
+        USUARIO: 
+        <?php
+            session_start();
+            echo $_SESSION['usuario'];
+        ?>
+    </h2>
+    <form method="post" action="">
+        <input name="logout" type="submit" value="Logout">
+    </form>
+    <?php 
+        if(isset($_POST['logout'])) {
+            session_destroy();
+            header("Location: login.php");
+        }
+    ?>
     <div class="container">
         <form class="formMain" method="post">
             <div class="form-group">
@@ -115,7 +132,7 @@
         <div class="formPhp">
             <?php
             require_once "banco.php";
-
+            require_once "bancoFilme.php";
             ?>
         </div>
     </div>
