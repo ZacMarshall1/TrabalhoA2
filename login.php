@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
     <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
 
@@ -59,7 +60,7 @@ $banco->close();
       <label for="password">Senha</label>
       <input type="password" name="password" id="password" required>
 
-      <button type="submit">Entrar</button>
+      <button class=" btn btn-primary" type="submit">Entrar</button>
     </form>
     <p>Não tem uma conta? <a href="cadastro.php">Faça seu cadastro</a></p>
 </div>
