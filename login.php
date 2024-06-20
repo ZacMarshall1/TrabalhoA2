@@ -58,14 +58,11 @@
     <div>
         <h1>Login</h1>
         <form class="login-form" method="post" action="">
-            <div class="form-floating">
-                <input class="form-control" type="text" placeholder="usuario" name="usuario">
-                <label for="usuario">Usuário</label>
-            </div>
-            <div class="form-floating">
+            
+                <input class="form-control" type="text" placeholder="usuario" name="usuario"> 
+            
                 <input class="form-control" type="text" placeholder="senha" name="senha">
-                <label for="senha">Senha</label>
-            </div>
+                
             <input class="btn btn-primary" type="submit" value="Entrar">
         </form>
         <a class="link-offset-2" href="cadastro.php">Faça seu cadastro</a>
