@@ -1,7 +1,7 @@
 <pre>
 <?php
 
-$banco = new mysqli("localhost", "root", "", "testesystem");
+$banco = new mysqli("localhost:3307", "root", "", "system_db");
 
 function cadastarFilme($titulo, $autor, $sinopse, $nota): void
 {
