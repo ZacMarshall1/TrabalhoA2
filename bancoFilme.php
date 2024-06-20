@@ -1,7 +1,7 @@
 <pre>
 
     <?php
-    $banco = new mysqli("localhost:3307", "root", "", "system_db");
+    $banco = new mysqli("localhost", "root", "", "system_db");
 
     $idUsuario = $_SESSION['id_usuario'];
     function cadastrarFilme($titulo, $autor, $sinopse, $nota): void
