@@ -123,10 +123,8 @@
                     <option value="5">5</option>
                 </select>
             </div>
-            <!-- <input type="submit" value="Enviar" name="submit"> -->
             <button class="btn bg-primary" name="submit" value="Enviar">Enviar</button>
 
-            <!-- <input type="submit" value="Apagar Tudo" name="removeAll"> -->
             <button class="btn bg-danger" type="submit" value="Apagar Tudo" name="removeAll">Apagar Tudo</button>
         </form>
         <div class="formPhp">
