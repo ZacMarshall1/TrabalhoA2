@@ -23,6 +23,10 @@ button {
     margin-bottom: 50px;
 }
 
+.btn {
+    margin-top: 10px;
+}
+
 h1 {
     text-align: center;
 }
