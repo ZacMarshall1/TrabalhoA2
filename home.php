@@ -34,10 +34,6 @@
             margin: 40px 0 0 30px;
         }
 
-        .formMain>input {
-            padding: 8px;
-            border-radius: 10px;
-        }
 
         ul {
             display: flex;
@@ -87,13 +83,18 @@
         }
 
         p {
-            color: white;
+            color: red;
             font-size: 20px;
             margin-top: 45px;
         }
 
         .formPhp {
             margin: 30px 0 0 0;
+        }
+
+        #logout {
+            margin-left: 60px;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -108,7 +109,7 @@
         ?>
     </h2>
     <form method="post" action="">
-        <input class="btn btn-warning" name="logout" type="submit" value="Logout">
+        <input class="btn btn-warning" name="logout" id="logout" type="submit" value="Logout">
     </form>
     <?php 
         if(isset($_POST['logout'])) {

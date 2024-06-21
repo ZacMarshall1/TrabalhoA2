@@ -19,8 +19,12 @@
         $sinopse = $_POST['sinopse'];
         $nota = $_POST['nota'];
 
+        $verif = $banco->query("SELECT * FROM filmes WHERE titulo = '$titulo'"); 
+
         if (empty($titulo) || empty($autor) || empty($sinopse) || empty($nota)) {
             echo "<p>Algum campo está vazio!</p>";
+        } else if ($verif->num_rows > 0){
+            echo "<p>Já tem um filme com esse título!</p>";
         } else {
 
             cadastrarFilme($titulo, $autor, $sinopse, $nota);
