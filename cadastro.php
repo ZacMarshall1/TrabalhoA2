@@ -75,7 +75,7 @@
                 <input class="form-control" type="text" name="email" placeholder="Email">
 
                 <input class="btn btn-primary" type="submit" name="enviar" value="Enviar">
-                <a class="btn btn-warning" href="login.php">Entrar</a>
+                <a class="btn btn-warning" href="index.php">Entrar</a>
         </div>
 
     </div>
