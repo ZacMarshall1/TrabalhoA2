@@ -5,15 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filmes PHP</title>
+
+    <!-- FONTE MONTSERRAT' -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
-            background-color: #454545;
+            /* background: radial-gradient(circle at 24.1% 68.8%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 99.4%); */
+            background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
+            font-family: "Montserrat", sans-serif;
             margin: 0;
         }
 
         h2 {
-            color: white;
+            color: black;
             margin: 20px 0 0 65px;
         }
 
@@ -41,15 +50,21 @@
 
         li {
             color: white;
-            background-color: #581845;
+            background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
             width: 200px;
             height: 250px;
+            margin: 8px 8px;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 10px;
+            box-shadow: 3px 3px 16px black;
             overflow: hidden;
-            font-size: 12px;
+        }
+
+        .btn{
+            color: white;
+            font-weight: bold;
         }
 
         .titulo {
@@ -93,7 +108,7 @@
         ?>
     </h2>
     <form method="post" action="">
-        <input name="logout" type="submit" value="Logout">
+        <input class="btn btn-warning" name="logout" type="submit" value="Logout">
     </form>
     <?php 
         if(isset($_POST['logout'])) {

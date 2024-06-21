@@ -6,11 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="login.css">
     <title>Login</title>
+    <!-- FONTE MONTSERRAT' -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <style>
     body {
-        font-family: "Roboto", sans-serif;
+        background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
+        font-family: "Montserrat", sans-serif;
     }
 
     div {
@@ -26,6 +34,10 @@
     }
 
     label {
+        margin-top: 10px;
+    }
+
+    .btn {
         margin-top: 10px;
     }
 
@@ -50,11 +62,14 @@
     <div>
         <h1>Login</h1>
         <form class="login-form" method="post" action="">
-            <input type="text" placeholder="usuario" name="usuario">
-            <input type="text" placeholder="senha" name="senha">
-            <input type="submit" value="Entrar">
+            
+                <input class="form-control" type="text" placeholder="Usuário" name="usuario"> 
+            
+                <input class="form-control" type="password" placeholder="Senha" name="senha">
+                
+            <input class="btn btn-primary" type="submit" value="Entrar">
         </form>
-        <a href="cadastro.php">Faça seu cadastro</a>
+        <a class="link-offset-2" href="cadastro.php">Faça seu cadastro</a>
 
         <?php
         session_start();
