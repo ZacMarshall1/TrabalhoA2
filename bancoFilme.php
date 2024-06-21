@@ -26,7 +26,6 @@
         } else if ($verif->num_rows > 0){
             echo "<p>Já tem um filme com esse título!</p>";
         } else {
-
             cadastrarFilme($titulo, $autor, $sinopse, $nota);
         }
     }

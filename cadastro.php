@@ -87,15 +87,20 @@
     $email = $_POST['email'] ?? null;
 
     if (isset($_POST['enviar'])) {
-        require_once "banco.php";
-        $busca = $banco->query("SELECT * FROM usuarios WHERE usuario = '$usuario'");
-        $obj = $busca->fetch_object();
-        if (is_null($obj)) {
 
-            cadastrarUsuario($usuario, $senha, $nome, $email);
-            header("Location: login.php");
+        if (empty($usuario) || empty($senha) || empty($nome) || empty($email)) {
+            echo "<p class='UsuarioDuplicado'>Algum campo está vazio!</p>";
         } else {
-            echo "<p class='UsuarioDuplicado'>Já tem um usuario com esse nome!</p>";
+            require_once "banco.php";
+            $busca = $banco->query("SELECT * FROM usuarios WHERE usuario = '$usuario'");
+            $obj = $busca->fetch_object();
+            if (is_null($obj)) {
+
+                cadastrarUsuario($usuario, $senha, $nome, $email);
+                header("Location: login.php");
+            } else {
+                echo "<p class='UsuarioDuplicado'>Já tem um usuario com esse nome!</p>";
+            }
         }
     }
 
