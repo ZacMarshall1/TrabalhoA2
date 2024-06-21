@@ -45,8 +45,17 @@
         h1 {
             text-align: center;
         }
-        .btn{
+
+        .btn {
             margin-top: 10px;
+        }
+
+        .UsuarioDuplicado {
+            font-size: 15px;
+            background-color: red;
+            color: white;
+            margin-inline: 100px;
+            padding: 8px;
         }
     </style>
 </head>
@@ -56,33 +65,39 @@
 
         <h1>Cadastre-se</h1>
         <div class="mb-3">
-                <input class="form-control" type="text" name="usuario" placeholder="Usuário"> 
-            
+            <form method="post" action="">
+                <input class="form-control" type="text" name="usuario" placeholder="Usuário">
+
                 <input class="form-control" type="password" name="senha" placeholder="Senha">
 
                 <input class="form-control" type="text" name="nome" placeholder="Nome">
-            
-                <input class="form-control" type="text" name="email" placeholder="Email" >  
-                
-                <input class="btn btn-primary" type="submit" id="enviar" name="enviar" value="Enviar">  
-                <a class="btn btn-warning" href="login.php">Entrar</a>
-            </div>
-    
-        </div>
-    </div>
-    
-    <?php
-        $usuario = $_POST['usuario'] ?? null;
-        $senha = $_POST['senha'] ?? null;
-        $nome = $_POST['nome'] ?? null;
-        $email = $_POST['email'] ?? null;
 
-        if (isset($_POST['enviar'])) {
-            require_once "banco.php";
+                <input class="form-control" type="text" name="email" placeholder="Email">
+
+                <input class="btn btn-primary" type="submit" name="enviar" value="Enviar">
+                <a class="btn btn-warning" href="login.php">Entrar</a>
+        </div>
+
+    </div>
+
+    <?php
+    $usuario = $_POST['usuario'] ?? null;
+    $senha = $_POST['senha'] ?? null;
+    $nome = $_POST['nome'] ?? null;
+    $email = $_POST['email'] ?? null;
+
+    if (isset($_POST['enviar'])) {
+        require_once "banco.php";
+        $busca = $banco->query("SELECT * FROM usuarios WHERE usuario = '$usuario'");
+        $obj = $busca->fetch_object();
+        if (is_null($obj)) {
 
             cadastrarUsuario($usuario, $senha, $nome, $email);
             header("Location: login.php");
+        } else {
+            echo "<p class='UsuarioDuplicado'>Já tem um usuario com esse nome!</p>";
         }
+    }
 
     ?>
 </body>

@@ -1,7 +1,7 @@
 <pre>
 
     <?php
-    $banco = new mysqli("localhost", "root", "", "system_db");
+    $banco = new mysqli("localhost:3307", "root", "", "system_db");
 
     $idUsuario = $_SESSION['id_usuario'];
     function cadastrarFilme($titulo, $autor, $sinopse, $nota): void
@@ -47,10 +47,7 @@
 
         echo "<form class='formFilme' method='post'>";
         echo "<li>Titulo: " . $obj->titulo . " <br> Autor: " . $obj->autor . " <br> Sinopse: " . $obj->sinopse . " <br> Nota: " . $obj->nota . "</li>";
-        echo  "<input type='hidden' name='id' value='$obj->ID'>
-        <input class='btn btn-primary' type='submit' value='Remover' name='remove'>
-
-    </form>";
+        echo  "<input type='hidden' name='id' value='$obj->ID'><input class='btn btn-primary' type='submit' value='Remover' name='remove'></form>";
     }
     echo "</ul>";
     ?>
