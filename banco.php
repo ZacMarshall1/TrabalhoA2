@@ -14,7 +14,5 @@ function cadastrarUsuario($usuario, $senha, $nome, $email): void
     $banco->query($add);
 }
 
-
-
 ?>
 </pre>
